@@ -20,7 +20,7 @@ function About() {
   }, []);
   return (
     <>
-      <div className="mx-10">
+      <div id="about" className="mx-10">
       
         <Navbar />
         <div className="mx-10">

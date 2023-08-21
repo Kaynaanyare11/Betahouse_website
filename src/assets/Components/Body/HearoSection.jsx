@@ -1,5 +1,14 @@
-import { useEffect, useState } from 'react';
+import React,{ useEffect,useRef, useState } from 'react';
 import {GetData} from '../Shared/ApiCrud'
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+
+// import required modules
+import { Navigation } from 'swiper/modules';
 function HeroSection() {
 
     const [HeroSectionTitle, setHeroSection] = useState('');
@@ -25,18 +34,39 @@ function HeroSection() {
       }, [])
     return (
         <div className="md:columns-2 mt-28">
-            <div className="flex flex-col md:ms-10">
+<Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+        <SwiperSlide>            <div className="flex flex-col md:ms-10">
                 <div className="text-black text-4xl md:text-6xl font-bold font-serif">
                     {HeroSectionTitle} </div>
                 <div className="text-2xl md:text-3xl mt-10">
                     {HeroSectionDiscription}
                 </div>
             </div>
-            <div className="w-auto mt-10 md:w-3/4 md:ms-20">
-               <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=875&q=80" alt="" />
+            <div className="md:w-2/2 md:pr-8 my-11 me-10">
+               <img className='object-cover' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSat2oCai8c6IgkjLmyYTMz0OT5UYoQ9-rZJT-WKg8VeaHx-MCDAPfvvs3GWVpzAPaoyIM&usqp=CAU" alt="" />
             </div>
 
-        
+        </SwiperSlide>
+        <SwiperSlide>            <div className="flex flex-col md:ms-10">
+                <div className="text-black text-4xl md:text-6xl font-bold font-serif">
+                    {HeroSectionTitle} </div>
+                <div className="text-2xl md:text-3xl mt-10">
+                    {HeroSectionDiscription}
+                </div>
+            </div>
+            <div className="md:w-2/2 md:pr-8 my-11 me-10">
+               <img className='w-full h-auto object-cover rounded-tr-full rounded-bl-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSat2oCai8c6IgkjLmyYTMz0OT5UYoQ9-rZJT-WKg8VeaHx-MCDAPfvvs3GWVpzAPaoyIM&usqp=CAU" alt="" />
+            </div>
+
+        </SwiperSlide>
+        <SwiperSlide>Slide 3</SwiperSlide>
+        <SwiperSlide>Slide 4</SwiperSlide>
+        <SwiperSlide>Slide 5</SwiperSlide>
+        <SwiperSlide>Slide 6</SwiperSlide>
+        <SwiperSlide>Slide 7</SwiperSlide>
+        <SwiperSlide>Slide 8</SwiperSlide>
+        <SwiperSlide>Slide 9</SwiperSlide>
+      </Swiper>
         </div>
       );
 }
